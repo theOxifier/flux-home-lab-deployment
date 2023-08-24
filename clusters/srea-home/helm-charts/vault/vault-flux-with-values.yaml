@@ -18,7 +18,6 @@ spec:
   releaseName: vault-2
   targetNamespace: vault-2
   values:
-    server: null
     ui:
       activeVaultPodOnly: false
       annotations: {}
