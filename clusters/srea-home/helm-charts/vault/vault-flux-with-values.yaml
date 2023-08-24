@@ -15,7 +15,7 @@ spec:
   install:
     createNamespace: true
   interval: 1m0s
-  releaseName: vault
+  releaseName: vault-2
   targetNamespace: vault-2
   values:
     server: null
