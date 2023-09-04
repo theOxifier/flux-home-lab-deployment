@@ -15,7 +15,7 @@ spec:
   install:
     crds: Create
   interval: 1h0m0s
-  releaseName: ingress-nginx
+  releaseName: ingress-controller
   targetNamespace: ingress-controller
   upgrade:
     crds: CreateReplace
