@@ -1,0 +1,35 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: longhorn
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: longhorn
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: longhorn
+  install:
+    crds: Create
+  interval: 1h0m0s
+  releaseName: longhorn
+  targetNamespace: longhorn-system
+  upgrade:
+    crds: CreateReplace
+  values:
+    ingress:
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        kubernetes.io/ingress.class: nginx
+        nginx.ingress.kubernetes.io/auth-realm: Authentication Required
+        nginx.ingress.kubernetes.io/auth-secret: basic-auth
+        nginx.ingress.kubernetes.io/auth-type: basic
+      enabled: true
+      host: longhorn.foxnheart.com
+      path: /
+      secureBackends: true
+      tls: true
+      tlsSecret: longhorn.local-tls
