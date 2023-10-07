@@ -42,3 +42,5 @@ spec:
       - pipeline-stage-view
       - folder-properties
       - github-oauth
+    persistence:
+      enabled: false
