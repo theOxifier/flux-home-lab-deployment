@@ -19,7 +19,7 @@ metadata:
   name: flux-system
   namespace: flux-system
 spec:
-  interval: 2m0s
+  interval: 10s
   path: ./clusters/srea-home
   prune: true
   sourceRef:
